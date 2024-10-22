@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { SpeedtestModule } from './speedtest/speedtest.module';
 
 @Module({
-  imports: [SpeedtestModule],
+  imports: [SpeedtestModule ],
   controllers: [AppController],
   providers: [AppService],
 })
