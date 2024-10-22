@@ -21,10 +21,10 @@ export class SpeedtestService {
       //velodidades mbps
       const downloadSpeed = await this.speedtest.getSpeed();
       
-      const donwloadSpeedFinal = downloadSpeed / 116080;
+      const donwloadSpeedFinal = downloadSpeed / 450000;
       const uploadSpeed = donwloadSpeedFinal - 93;
       const latency = uploadSpeed -3;
-
+      console.log(downloadSpeed)
       return {
         downloadSpeed: Number(donwloadSpeedFinal.toFixed(2)),
         uploadSpeed: Number(uploadSpeed.toFixed(2)), // Ejemplo de valor para la subida
