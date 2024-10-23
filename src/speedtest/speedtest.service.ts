@@ -21,14 +21,12 @@ export class SpeedtestService {
       //velodidades mbps
       const downloadSpeed = await this.speedtest.getSpeed();
       
-      const donwloadSpeedFinal = downloadSpeed / 450000;
-      const uploadSpeed = donwloadSpeedFinal - 93;
-      const latency = uploadSpeed -3;
-      console.log(downloadSpeed)
+      const donwloadSpeedFinal = downloadSpeed / 125000;
+      const uploadSpeed = donwloadSpeedFinal / 3;
+
       return {
         downloadSpeed: Number(donwloadSpeedFinal.toFixed(2)),
         uploadSpeed: Number(uploadSpeed.toFixed(2)), // Ejemplo de valor para la subida
-        latency: Number(latency.toFixed(2)) // Ejemplo de valor para latencia
       };
     } catch (error) {
       throw new Error('Error al medir la velocidad de internet');
